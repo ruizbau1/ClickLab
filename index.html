@@ -41,6 +41,18 @@
     <p>En <strong>ClickLab</strong> nos especializamos en <strong>e-commerce</strong>, <strong>plataformas e-learning</strong>, <strong>portafolios profesionales</strong>, <strong>diseño web</strong> y <strong>sitios informativos</strong>. Creamos soluciones digitales adaptadas a tus necesidades.</p>
   </section>
 
+  <section class="cta-diferenciador">
+    <h2>¿Por qué elegir ClickLab?</h2>
+    <p>Creamos soluciones <strong>funcionales, seguras y escalables</strong> para llevar tu negocio digital al siguiente nivel.</p>
+    <div class="diferenciador-lista">
+      <p>✔ Atención personalizada y rápida</p>
+      <p>✔ Diseño web moderno y responsivo</p>
+      <p>✔ Entrega en tiempo y forma</p>
+    </div>
+    <a href="#cotiza" class="btn cta-btn">Solicita tu cotización</a>
+  </section>
+  
+
   <p class="nota-importante">
     Estos solo son ejemplos hechos solo con <a href="frontend.html">frontend</a>. 
     En los proyectos reales que desarrollamos para nuestros clientes, integramos tanto frontend como 
@@ -58,8 +70,8 @@
       </div>
       <div class="project-card">
         <h3>Plataforma E-learning</h3>
-        <p>Portal educativo con cursos, clases y seguimiento para alumnos.</p><br>
-        <a href="#" class="btn">VER PROYECTO</a>
+        <p>Portal educativo con curso basico de html</p><br>
+        <a href="https://ruizbau1.github.io/elearning/" class="btn">VER PROYECTO</a>
       </div>
       <div class="project-card">
         <h3>Portafolio Profesional</h3>
@@ -96,6 +108,21 @@
       <button type="submit" class="btn">Solicitar Cotización</button>
     </form>
   </section><br>
+  
+  <section class="precios-ref">
+    <h3>Precios de referencia</h3>
+    <p>En <strong>ClickLab</strong> nos especializamos en soluciones digitales adaptadas a tus necesidades. Aquí te mostramos algunos precios estimados:</p>
+    <ul>
+      <li><strong>Tienda en línea (e-commerce):</strong> desde $2,800 MXN</li>
+      <li><strong>Plataforma e-learning:</strong> desde $4,500 MXN</li>
+      <li><strong>Portafolio profesional:</strong> desde $900 MXN</li>
+      <li><strong>Sitio informativo:</strong> desde $800 MXN</li>
+      <li><strong>Diseño web personalizado:</strong> desde $500 MXN</li>
+    </ul>
+    <p class="nota">*Los precios pueden variar según las funcionalidades requeridas, integraciones o personalizaciones adicionales.</p>
+  </section>
+  <br><br>
+  
 
   <section class="direct-contact" id="contacto">
     <h2>Información de Contacto</h2>
@@ -104,7 +131,7 @@
     <p><strong>WhatsApp:</strong> <a href="https://wa.me/5217713971209" target="_blank">+52 771 397 1209</a></p>
     <p>Estamos listos para brindarte una atención personalizada.</p>
   </section>
-
+  
   <footer class="site-footer">
     <div class="footer-content">
       <p>&copy; 2025 ClickLab. Todos los derechos reservados.</p>
@@ -122,5 +149,49 @@
       menu.classList.toggle("open");
     }
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    document.querySelector('.quote-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+  
+      const name = this.name.value.trim();
+      const email = this.email.value.trim();
+      const message = this.message.value.trim();
+  
+      if (!name || !email || !message) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Campos incompletos',
+          text: 'Por favor, completa todos los campos.',
+          confirmButtonColor: '#003366'
+        });
+        return;
+      }
+  
+      fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          Swal.fire({
+            icon: 'success',
+            title: '¡Cotización enviada!',
+            text: 'Nos pondremos en contacto contigo pronto.',
+            confirmButtonColor: '#003366'
+          });
+          this.reset();
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error al enviar',
+            text: 'Por favor, intenta más tarde.',
+            confirmButtonColor: '#003366'
+          });
+        }
+      });
+    });
+  </script>
+  
 </body>
 </html>
