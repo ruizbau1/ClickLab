@@ -459,6 +459,7 @@ nav {
   max-width: 95%;
   background: #fff3f3;
   border: 1px solid red;
+  background-color: white;
   border-radius: 10px;
   color: red;
   box-sizing: border-box;
@@ -470,6 +471,85 @@ nav {
   text-decoration: underline;
   word-break: break-word;
 }
+.cta-diferenciador {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 50px 40px;
+  margin: 40px auto;
+  max-width: 800px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.cta-diferenciador h2 {
+  font-size: 1.8rem;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.cta-diferenciador p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.diferenciador-lista p {
+  margin: 8px 0;
+  font-size: 1rem;
+  color: #111;
+}
+
+.cta-btn {
+  margin-top: 20px;
+  border: 2px solid #003366;
+  color: #003366;
+  padding: 10px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  background: #003366;
+  color: #fff;
+}
+
+.precios-ref {
+  margin-top: 40px;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 25px 30px;
+  border-radius: 10px;
+}
+
+.precios-ref h3 {
+  color: #003366;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.precios-ref ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.precios-ref li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.precios-ref .nota {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
 
 
 @media (max-width: 768px) {
