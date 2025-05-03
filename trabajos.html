@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Galería de Trabajos - ClickLab</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <h1 class="logo">CLICKLAB</h1>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="index.html#hero">INICIO</a></li>
+          <li><a href="index.html#sobre">SOBRE NOSOTROS</a></li>
+          <li><a href="trabajos.html">TRABAJOS</a></li>
+          <li><a href="index.html#contacto">CONTACTO</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="intro">
+      <h2>Galería de <span>Trabajos</span></h2>
+      <h3>Proyectos Recientes</h3>
+      <p>Explora algunas de las soluciones web que hemos diseñado para nuestros clientes: tiendas, plataformas educativas y sitios profesionales.</p>
+    </div>
+  </section>
+  
+  <section class="portfolio">
+    <h2>TRABAJOS DESTACADOS</h2>
+    <div class="card-carousel">
+      <div class="card">
+        <div class="image-container">
+          <button class="arrow left" onclick="prevImage(0)">&#10094;</button>
+          <img id="slider0" src="assets/i1.png" alt="Tienda Online">
+          <button class="arrow right" onclick="nextImage(0)">&#10095;</button>
+        </div>
+        <div class="bottom-section">
+          <p>Tienda online con pasarela de pago y carrito funcional.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="image-container">
+          <button class="arrow left" onclick="prevImage(1)">&#10094;</button>
+          <img id="slider1" src="assets/curso.jpg" alt="Plataforma Educativa">
+          <button class="arrow right" onclick="nextImage(1)">&#10095;</button>
+        </div>
+        <div class="bottom-section">
+          <p>Plataforma educativa con sistema de cursos, acceso seguro y evaluaciones.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="image-container">
+          <button class="arrow left" onclick="prevImage(2)">&#10094;</button>
+          <img id="slider2" src="assets/landing.jpg" alt="Landing Page">
+          <button class="arrow right" onclick="nextImage(2)">&#10095;</button>
+        </div>
+        <div class="bottom-section">
+          <p>Landing page moderna y responsiva para presentación de servicios.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="direct-contact" id="contacto">
+    <h2>Contáctanos</h2>
+    <p>¿Te interesa un proyecto similar? Escríbenos para comenzar tu desarrollo personalizado.</p>
+    <p><strong>Correo electrónico:</strong> <a href="mailto:angelrbautista8@gmail.com">angelrbautista8@gmail.com</a></p>
+    <p><strong>WhatsApp:</strong> <a href="https://wa.me/5217713971209" target="_blank">+52 771 397 1209</a></p>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; 2025 ClickLab. Todos los derechos reservados.</p>
+      <div class="footer-links">
+        <a href="index.html#hero">Inicio</a>
+        <a href="trabajos.html">Trabajos</a>
+        <a href="index.html#contacto">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal para imágenes (opcional si usas clic en imágenes) -->
+  <div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("nav-menu");
+      menu.classList.toggle("open");
+    }
+
+    const sliders = [
+      [ "assets/i1.png", "assets/i2.png", "assets/i3.png", "assets/i4.png", "assets/i5.png", "assets/i6.png", "assets/i7.png", "assets/i8.png" ],
+      [ "assets/curso.jpg", "assets/curso2.jpg", "assets/curso3.jpg" ],
+      [ "assets/landing.jpg", "assets/landing2.jpg", "assets/landing3.jpg" ]
+    ];
+    const indices = [0, 0, 0];
+
+    function showImage(i) {
+      document.getElementById("slider" + i).src = sliders[i][indices[i]];
+    }
+
+    function nextImage(i) {
+      indices[i] = (indices[i] + 1) % sliders[i].length;
+      showImage(i);
+    }
+
+    function prevImage(i) {
+      indices[i] = (indices[i] - 1 + sliders[i].length) % sliders[i].length;
+      showImage(i);
+    }
+
+    // Modal opcional si haces clic en la imagen
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const imgs = document.querySelectorAll(".card img");
+
+    imgs.forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+      });
+    });
+
+    function closeModal() {
+      modal.style.display = "none";
+    }
+  </script>
+</body>
+</html>

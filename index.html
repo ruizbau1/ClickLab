@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ClickLab | Desarrollo Web</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <h1 class="logo">CLICKLAB</h1>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="#hero">INICIO</a></li>
+          <li><a href="#sobre">SOBRE NOSOTROS</a></li>
+          <li><a href="trabajos.html">TRABAJOS</a></li>
+          <li><a href="#contacto">CONTACTO</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="intro">
+      <h2>Bienvenido a <span>ClickLab</span></h2>
+      <h3>Expertos en Desarrollo Web</h3>
+      <p>Diseñamos páginas web modernas y funcionales: tiendas online, plataformas educativas, portafolios y sitios informativos.</p>
+      <a href="trabajos.html" class="btn">VER TRABAJOS</a>
+    </div>
+  </section>
+
+  <section class="about" id="sobre">
+    <h2>SOBRE NOSOTROS</h2>
+    <p>En <strong>ClickLab</strong> nos especializamos en <strong>e-commerce</strong>, <strong>plataformas e-learning</strong>, <strong>portafolios profesionales</strong>, <strong>diseño web</strong> y <strong>sitios informativos</strong>. Creamos soluciones digitales adaptadas a tus necesidades.</p>
+  </section>
+
+  <p class="nota-importante">
+    Estos solo son ejemplos hechos solo con <a href="frontend.html">frontend</a>. 
+    En los proyectos reales que desarrollamos para nuestros clientes, integramos tanto frontend como 
+    <a href="backend.html">backend</a> completo para ofrecer soluciones funcionales y profesionales.
+  </p>
+  
+
+  <section class="projects" id="proyectos">
+    <h2>PROYECTOS</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Tienda Online</h3>
+        <p>Ejemplo frontend E-commerce funcional con productos y carrito.</p><br>
+        <a href="https://ruizbau1.github.io/Tenismania/" class="btn">VER PROYECTO</a>
+      </div>
+      <div class="project-card">
+        <h3>Plataforma E-learning</h3>
+        <p>Portal educativo con cursos, clases y seguimiento para alumnos.</p><br>
+        <a href="#" class="btn">VER PROYECTO</a>
+      </div>
+      <div class="project-card">
+        <h3>Portafolio Profesional</h3>
+        <p>Diseño limpio y responsivo para mostrar experiencia y servicios.</p><br>
+        <a href="#" class="btn">VER PROYECTO</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote" id="cotiza">
+    <h2>COTIZA TU PROYECTO</h2>
+    <div class="timeline">
+      <div class="step">
+        <div class="circle">1</div>
+        <h3>Diseño Web</h3>
+        <p>1-2 días hábiles<br>Modificaciones en 2-3 días</p>
+      </div>
+      <div class="step">
+        <div class="circle">2</div>
+        <h3>Desarrollo Web</h3>
+        <p>3-5 días o más<br>Según la complejidad del proyecto</p>
+      </div>
+      <div class="step">
+        <div class="circle">3</div>
+        <h3>Entrega Final</h3>
+        <p>Publicación, revisión y entrega de archivos</p>
+      </div>
+    </div>
+
+    <form class="quote-form" action="https://formspree.io/f/mldbgkag" method="POST">
+      <input type="text" name="name" placeholder="Tu nombre" required />
+      <input type="email" name="email" placeholder="Tu correo" required />
+      <textarea name="message" placeholder="Describe tu proyecto..." rows="5" required></textarea>
+      <button type="submit" class="btn">Solicitar Cotización</button>
+    </form>
+  </section><br>
+
+  <section class="direct-contact" id="contacto">
+    <h2>Información de Contacto</h2>
+    <p>¿Necesitas una página web? Escríbenos y te ayudamos a llevar tu proyecto al siguiente nivel.</p>
+    <p><strong>Correo electrónico:</strong> <a href="mailto:angelrbautista8@gmail.com">angelrbautista8@gmail.com</a></p>
+    <p><strong>WhatsApp:</strong> <a href="https://wa.me/5217713971209" target="_blank">+52 771 397 1209</a></p>
+    <p>Estamos listos para brindarte una atención personalizada.</p>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; 2025 ClickLab. Todos los derechos reservados.</p>
+      <div class="footer-links">
+        <a href="#hero">Inicio</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("nav-menu");
+      menu.classList.toggle("open");
+    }
+  </script>
+</body>
+</html>
