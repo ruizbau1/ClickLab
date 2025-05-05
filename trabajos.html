@@ -102,43 +102,52 @@
       const menu = document.getElementById("nav-menu");
       menu.classList.toggle("open");
     }
-
+  
     const sliders = [
       [ "assets/i1.png", "assets/i2.png", "assets/i3.png", "assets/i4.png", "assets/i5.png", "assets/i6.png", "assets/i7.png", "assets/i8.png" ],
-      [ "assets/curso.jpg", "assets/curso2.jpg", "assets/curso3.jpg" ],
-      [ "assets/landing.jpg", "assets/landing2.jpg", "assets/landing3.jpg" ]
+      [ "assets/o1.png", "assets/o2.png", "assets/o3.png", "assets/o4.png", "assets/o5.png", "assets/o6.png", "assets/o7.png", "assets/o8.png" ],
+      [ "assets/u1.png", "assets/u2.png" ]
     ];
+  
     const indices = [0, 0, 0];
-
+  
     function showImage(i) {
       document.getElementById("slider" + i).src = sliders[i][indices[i]];
     }
-
+  
     function nextImage(i) {
       indices[i] = (indices[i] + 1) % sliders[i].length;
       showImage(i);
     }
-
+  
     function prevImage(i) {
       indices[i] = (indices[i] - 1 + sliders[i].length) % sliders[i].length;
       showImage(i);
     }
-
+  
+    // Mostrar la primera imagen de cada carrusel al cargar
+    window.onload = function() {
+      for (let i = 0; i < sliders.length; i++) {
+        showImage(i);
+      }
+    };
+  
     // Modal opcional si haces clic en la imagen
     const modal = document.getElementById("modal");
     const modalImg = document.getElementById("modal-img");
     const imgs = document.querySelectorAll(".card img");
-
+  
     imgs.forEach(img => {
       img.addEventListener("click", () => {
         modal.style.display = "block";
         modalImg.src = img.src;
       });
     });
-
+  
     function closeModal() {
       modal.style.display = "none";
     }
   </script>
+  
 </body>
 </html>
